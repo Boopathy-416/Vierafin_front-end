@@ -1,10 +1,10 @@
-import React, { useState } from "react"
-import { toast } from "sonner"
-import RegisterForm from "./components/RegisterForm"
-import Navbar from "./components/Navbar"
-import Sidebar from "./components/sidebar"
-import WebinarPromo from "./components/WebinarPromo"
-import { Toaster } from "./components/Toaster"
+import React, { useState } from "react";
+import { toast } from "sonner";
+import RegisterForm from "./components/RegisterForm";
+import Navbar from "./components/Navbar";
+import Sidebar from "./components/Sidebar";
+import WebinarPromo from "./components/WebinarPromo";
+import { Toaster } from "./components/Toaster";
 
 export default function Home() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)

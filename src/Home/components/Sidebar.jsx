@@ -1,5 +1,4 @@
-// Sidebar.jsx
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { X, ChevronRight, Phone, MapPin } from "lucide-react";
 import gsap from "gsap";
 import Button from "./ui/Button";
