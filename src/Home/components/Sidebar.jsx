@@ -65,14 +65,7 @@ export default function Sidebar({ isOpen, toggleSidebar }) {
         className="fixed top-0 right-0 h-full w-[300px] bg-white z-50 shadow-xl flex-col hidden overflow-auto"
       >
         <div className="flex items-center justify-between p-4 border-b">
-        <div className="text-2xl font-bold text-[#3a2a5e]">
-              VIERAFIN 
-              <span className="bg-red-600 w-4 h-8 inline-block ml-1"></span>
-            </div>
-            <div className="text-xs  text-gray-600">
-              <div>insurance &</div>
-              <div>investments</div>
-            </div>
+        <img className="w-40 h-12" src="https://res.cloudinary.com/dpm3bum4n/image/upload/v1746687518/Logo_eiwqip.png" alt="VIERAFIN insurance & investments  " />
           <Button  variant="ghost" size="icon" onClick={toggleSidebar}>
             <X className="h-5 w-5" />
           </Button>
@@ -80,12 +73,12 @@ export default function Sidebar({ isOpen, toggleSidebar }) {
 
         <div className="p-4 border-b">
           <div className="flex items-center gap-2 mb-3 text-sm">
-            <Phone className="h-4 w-4" />
+            <Phone className="h-6 text-green-900 rounded-full bg-gray-200 border-2 p-1 w-6" />
             <span className="font-medium">1800-313-123123</span>
           </div>
           <div className="flex items-center gap-2 text-sm">
-            <MapPin className="h-4 w-4" />
-            <span>BRANCH LOCATOR</span>
+            <MapPin className="h-6 text-red-900 rounded-full bg-gray-200 border-2 p-1 w-6" />
+            <span>TIRUPUR BRANCH</span>
           </div>
         </div>
 

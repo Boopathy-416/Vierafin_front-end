@@ -6,7 +6,7 @@ const Button = React.forwardRef(({ className, children, ...props }, ref) => {
   return (
     <button
       ref={ref}
-      className={`px-4 py-2 bg-blue-500 text-white rounded-md ${className}`}
+      className={`px-2 py-1 border-2  border-gray-600 text-red-700 rounded-sm  ${className}`}
       {...props}
     >
       {children}

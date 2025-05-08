@@ -52,19 +52,19 @@ export default function PhoneInput({
           <Button
             variant="outline"
             type="button"
-            className="flex items-center gap-1 rounded-r-none border-r-0 w-[80px] px-2 py-1"
+            className="flex items-center gap-1 bg-blue-500 text-white rounded-r-none border-r-0 w-[80px] px-2 py-1"
           >
             <span>{selectedCode}</span>
             <ChevronDown className="h-4 w-4 opacity-50" />
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="w-[200px] p-0" align="start">
-          <div className="max-h-[300px] overflow-auto">
+        <PopoverContent className="w-[200px]  p-0" align="start">
+          <div className="max-h-[300px]  overflow-auto">
             {countryCodes.map((item) => (
               <div
                 key={item.code}
                 onClick={() => handleCodeSelect(item.code)}
-                className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                className="flex items-center px-4 py-2 hover:bg-amber-100 : hover:scale-95 bg-gray-50 hover:border-green-800 tracking-wider  shadow-blue-950  cursor-pointer"
               >
                 <span className="font-medium mr-2">{item.code}</span>
                 <span className="text-sm text-gray-600">{item.country}</span>

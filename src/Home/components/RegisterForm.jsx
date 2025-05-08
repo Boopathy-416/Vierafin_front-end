@@ -111,7 +111,7 @@ export default function RegisterForm() {
 
         <Button
         type="submit"
-        className="w-full bg-red-600 hover:bg-red-700 cursor-pointer"
+        className="w-full bg-red-500 text-white font-medium tracking-wide shadow-red-700 shadow-sm hover:bg-red-700 cursor-pointer"
         disabled={loading} // 👈 disable button while loading
       >
         {loading ? "Submitting..." : "Submit"} {/* 👈 Loading indicator */}
