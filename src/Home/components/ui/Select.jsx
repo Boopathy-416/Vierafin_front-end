@@ -1,22 +1,15 @@
-import React from "react";
-
-const Select = React.forwardRef(({ options = [], className = "", ...props }, ref) => {
+export default function Select({ options = [], ...rest }) {
   return (
     <select
-      ref={ref}
-      className={`w-full px-3 cursor-pointer py-2 border  rounded-md shadow-sm bg-gray-100 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent ${className}`}
-      {...props}
+      className="w-full border rounded px-3 py-2"
+      {...rest} // forward register props like onChange, name, ref
     >
-      <option value="">Select a product</option>
-      {options.map((option, index) => (
-        <option className="bg-amber-100 p-2 " value={option} key={index}>
+      <option value="">-- Select --</option>
+      {options.map((option, idx) => (
+        <option key={idx} value={option}>
           {option}
         </option>
       ))}
     </select>
   );
-});
-
-Select.displayName = "Select";
-
-export default Select;
+}

@@ -1,14 +1,16 @@
-// App.jsx or index.jsx
-import { BrowserRouter as Router } from 'react-router-dom';
-import Home from './Home/Home';
-
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./Home/Home";
+import ThankYou from "./Home/ThankYou";
+import { Toaster } from "./Home/components/Toaster";
 
 function App() {
   return (
-    <Router>  {/* Ensure the entire app is inside a Router */}
-      <Home />
-      
+    <Router>
+      <Toaster /> {/* Toaster should be outside the routes */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/thank-you" element={<ThankYou />} />
+      </Routes>
     </Router>
   );
 }
