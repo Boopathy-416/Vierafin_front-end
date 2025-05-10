@@ -95,12 +95,12 @@ export default function Sidebar({ isOpen, toggleSidebar }) {
         <div className="p-4 border-b">
           <div className="flex items-center gap-2 mb-3 text-sm">
             <Phone className="h-7 text-gray-600 rounded-full p-1  w-8" />
-            <span className="font-medium">1800-313-123123</span>
+            <span className="font-medium text-gray-600 tracking-wider">+91 90877 33476</span>
           </div>
           <div className="flex items-center gap-2 text-sm">
-            <MapPin className="h-7 text-gray-600 rounded-full   w-8" />
-            <span className="font-medium text-orange-600 border-b-1 tracking-wider">
-              Tirupur Branch
+            <MapPin className="h-7 text-gray-600 rounded-full p-1  w-8" />
+            <span className="font-medium  text-gray-600  tracking-wider">
+              Coimbatore Branch
             </span>
           </div>
         </div>

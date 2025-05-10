@@ -38,11 +38,12 @@ import { gsap } from "gsap";
 
 
 const locations = [
-  "Bangalore",
+
   "Coimbatore",
   "Tirupur",
-  "Salem",
   "Erode",
+  "Salem"
+  
 ];
 export default function WebinarPromo () {
   const heroRef = useRef(null);
@@ -107,7 +108,7 @@ export default function WebinarPromo () {
       {/* Services badge */}
       <div
         ref={badgeRef}
-        className="absolute top-2 right-4 md:top-0 rounded-t-none md:right-6 bg-[#ff9800] text-white   p-2 border-2 border-t-0 rounded-lg z-10"
+        className="absolute top-0 right-4  rounded-t-none md:right-6 bg-[#ff9800] text-white   p-2 border-2 border-t-0 rounded-lg z-10"
       >
         <div className="text-xs font-bold text-center">FINANCIAL SERVICES</div>
         <div className="text-xs text-center">TAILORED FOR YOU</div>
@@ -140,9 +141,9 @@ export default function WebinarPromo () {
         <div className="w-full md:w-1/2  mt-8 md:mt-0 flex justify-center md:justify-end">
           <div className="relative w-[280px] h-[350px] md:w-[250px] md:h-[250px]">
             <img
-              src="https://res.cloudinary.com/dpm3bum4n/image/upload/v1746687199/Admin_pic_y1spiy.jpg"
+              src="https://res.cloudinary.com/dpm3bum4n/image/upload/v1746885638/Admin_man_q6qvdg.jpg"
               alt="Professional financial advisor"
-              className="md:w-50 w-full h-90 object-cover"
+              className="w-full opacity-90 h-90 object-cover"
             />
           </div>
         </div>
@@ -151,12 +152,12 @@ export default function WebinarPromo () {
       {/* Locations */}
       <div className="flex flex-wrap justify-center md:gap-6 gap-2 mb-4 text-sm">
         {locations.map((loc, i) => (
-          <span className=" tracking-wide   " key={i}>{loc}</span>
+          <span className=" tracking-wider" key={i}> {loc} </span>
         ))}
       </div>
 
       {/* Copyright */}
-      <p className="text-xs opacity-70">
+      <p className="text-xs text-white shadow-amber-50 shadow-2xl opacity-70">
         © {year} VIERAFIN. All rights reserved.
       </p>
     </footer>

@@ -18,7 +18,7 @@ export default function Navbar({ toggleSidebar }) {
         yoyo: true,
         ease: "power2.inOut",
       });
-      window.location.href = "tel:7678123123";
+      window.location.href = "tel:90877 33476";
     };
 
     phoneElement?.addEventListener("click", handleClick);
@@ -35,7 +35,7 @@ export default function Navbar({ toggleSidebar }) {
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-1">
               <MapPin className="h-4 w-4" />
-              <span>Tirupur Branch</span>
+              <span>Coimbatore  Branch</span>
             </div>
             <div className="hidden md:flex items-center gap-1">
               <Phone className="h-4 w-4" />
@@ -47,9 +47,9 @@ export default function Navbar({ toggleSidebar }) {
             className="flex items-center gap-1 cursor-pointer hover:text-red-600 transition-colors"
           >
             <Phone className="h-4 w-4" />
-            <span className="font-medium text-xs ">1800-313-123123</span>
+            <span className="font-medium text-xs ">+91 90877 33476</span>
             <span className="text-gray-400 mx-2">/</span>
-            <span className="font-medium  ">7678123123</span>
+            <span className="font-medium  ">support@virafin.in</span>
           </div>
           <button className="md:hidden " onClick={toggleSidebar}>
             <Menu className="h-5 w-5     text-center inline-flex " />

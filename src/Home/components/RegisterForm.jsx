@@ -43,18 +43,19 @@ export default function RegisterForm() {
     "Mutual Fund Investment",
     "Life Insurance",
     "Health Insurance",
-    "Fixed Deposit",
+    "StockMarket Advisory",
   ];
 
   return (
     <div className=" " style={{
         fontFamily:"Roboto Flex"
       }}>
-      <h2 className="text-2xl font-medium tracking-wide text-center text-gray-800 mb-6">
-        <b className=" text-3xl font-light">B</b>egin Your Financial Growth with         <b className=" text-4xl font-black source-serif-4 bg-gray-50 text-gray-500">V</b> <b className=" text-gray-500 font-semibold uppercase source-serif-4 -ml-1">ierafin</b>   
-           <span className="relative ml-2  inline-block w-[20px] h-[40px] bg-[#FF7F26]  mt-1">
-                <div className="absolute bottom-[10px] left-0 w-full h-[1px] bg-white" />
-              </span>
+      <h2 className="md:text-2xl text-xl font-medium tracking-wide text-center text-gray-800 mb-6">
+        <b className=" md:text-3xl text-2xl font-light">B</b>egin Your Financial Growth with <b className=" md:text-4xl text-3xl font-black source-serif-4 bg-gray-50 text-gray-500">V</b>
+         <b className=" text-gray-500  font-semibold uppercase source-serif-4 -ml-1">ierafin</b>   
+           {/* <span className="relative ml-2  inline-block w-[10px] h-[22px] md:w-[20px] md:h-[40px] bg-[#FF7F26]  mt-1">
+                <div className="absolute bottom-[4px] left-0 w-full h-[1px] bg-white" />
+              </span> */}
       </h2>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
@@ -120,7 +121,7 @@ export default function RegisterForm() {
         </Button>
 
         <p className="text-xs text-center text-gray-600">
-          By continuing, you agree to our Vierafin Company policy.
+          By continuing, you agree to our Vierafin policy.
         </p>
       </form>
     </div>
