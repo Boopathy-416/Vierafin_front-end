@@ -1,5 +1,3 @@
-
-
 import React from "react";
 
 const Button = React.forwardRef(({ className, children, ...props }, ref) => {
@@ -16,4 +14,4 @@ const Button = React.forwardRef(({ className, children, ...props }, ref) => {
 
 Button.displayName = "Button";
 
-export default Button; // Ensure default export
+export default Button;

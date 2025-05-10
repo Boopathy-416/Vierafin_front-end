@@ -1,14 +1,14 @@
-import React, { useEffect, useRef } from "react"
-import { Link } from "react-router-dom"
-import { Menu, MapPin, Phone } from "lucide-react"
-import gsap from "gsap"
-
+import React, { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
+import { Menu, MapPin, Phone } from "lucide-react";
+import gsap from "gsap";
+import '../../App.css'
 
 export default function Navbar({ toggleSidebar }) {
-  const phoneRef = useRef(null)
+  const phoneRef = useRef(null);
 
   useEffect(() => {
-    const phoneElement = phoneRef.current
+    const phoneElement = phoneRef.current;
 
     const handleClick = () => {
       gsap.to(phoneElement, {
@@ -17,16 +17,16 @@ export default function Navbar({ toggleSidebar }) {
         repeat: 1,
         yoyo: true,
         ease: "power2.inOut",
-      })
-      window.location.href = "tel:1800-313-123123"
-    }
+      });
+      window.location.href = "tel:7678123123";
+    };
 
-    phoneElement?.addEventListener("click", handleClick)
+    phoneElement?.addEventListener("click", handleClick);
 
     return () => {
-      phoneElement?.removeEventListener("click", handleClick)
-    }
-  }, [])
+      phoneElement?.removeEventListener("click", handleClick);
+    };
+  }, []);
 
   return (
     <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
@@ -35,20 +35,23 @@ export default function Navbar({ toggleSidebar }) {
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-1">
               <MapPin className="h-4 w-4" />
-              <span>Tirupur BRANCH</span>
+              <span>Tirupur Branch</span>
             </div>
             <div className="hidden md:flex items-center gap-1">
               <Phone className="h-4 w-4" />
               <span>REQUEST CALLBACK</span>
             </div>
           </div>
-          <div ref={phoneRef} className="flex items-center gap-1 cursor-pointer hover:text-red-600 transition-colors">
+          <div
+            ref={phoneRef}
+            className="flex items-center gap-1 cursor-pointer hover:text-red-600 transition-colors"
+          >
             <Phone className="h-4 w-4" />
             <span className="font-medium text-xs ">1800-313-123123</span>
             <span className="text-gray-400 mx-2">/</span>
             <span className="font-medium  ">7678123123</span>
           </div>
-          <button  className="md:hidden " onClick={toggleSidebar}>
+          <button className="md:hidden " onClick={toggleSidebar}>
             <Menu className="h-5 w-5     text-center inline-flex " />
             <span className="ml-2">MENU</span>
           </button>
@@ -58,15 +61,24 @@ export default function Navbar({ toggleSidebar }) {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between py-4">
           <Link to="/" className="flex items-center">
-            {/* <div className="text-2xl font-bold text-[#3a2a5e]">
-              VIERAFIN 
-              <span className="bg-red-600 w-4 h-8 inline-block ml-1"></span>
+            <div className="flex items-start space-x-4">
+              {/* VIERAFIN + description wrapper */}
+              <div className="relative">
+                <div className="text-3xl source-serif-4 text-[#636363ee]  leading-tight "  style={{
+                   
+                    
+                  }}>
+                  <span className="ml-1 tracking-wide">VIERAFIN</span> <br />{" "}
+                  <p className="text-xs dosis flex tracking-wider justify-end leading-0 ml-1"
+                 >Financial Advisory Services</p>
+                </div>
+              </div>
+
+              {/* Vertical Logo Element */}
+              <div className="relative w-[20px] h-[40px] bg-[#FF7F26]  mt-1">
+                <div className="absolute bottom-[10px] left-0 w-full h-[1px] bg-white" />
+              </div>
             </div>
-            <div className="text-xs ml-1 text-gray-600">
-              <div>insurance &</div>
-              <div>investments</div>
-            </div> */}
-            <img className="w-40 h-12" src="https://res.cloudinary.com/dpm3bum4n/image/upload/v1746687518/Logo_eiwqip.png" alt="VIERAFIN insurance & investments  " />
           </Link>
 
           <nav className="hidden md:flex items-center space-x-6">
@@ -77,20 +89,26 @@ export default function Navbar({ toggleSidebar }) {
             <NavLink to="#">FINtastic Talks</NavLink>
           </nav>
 
-          <button  className="hidden md:flex cursor-pointer " onClick={toggleSidebar}>
+          <button
+            className="hidden md:flex cursor-pointer "
+            onClick={toggleSidebar}
+          >
             <Menu className="h-6 w-5" />
             <span className=" pl-1  ">MENU</span>
           </button>
         </div>
       </div>
     </header>
-  )
+  );
 }
 
 function NavLink({ to, children }) {
   return (
-    <Link to={to} className="text-sm font-medium text-gray-700 hover:text-red-600 transition-colors">
+    <Link
+      to={to}
+      className="text-sm font-medium text-gray-700 hover:text-red-600 transition-colors"
+    >
       {children}
     </Link>
-  )
+  );
 }

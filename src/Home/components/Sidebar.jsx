@@ -4,12 +4,10 @@ import gsap from "gsap";
 import Button from "./ui/Button";
 import { Link } from "react-router-dom";
 
-
-
-
 export default function Sidebar({ isOpen, toggleSidebar }) {
   const sidebarRef = useRef(null);
   const overlayRef = useRef(null);
+  const year = new Date().getFullYear();
 
   useEffect(() => {
     const sidebar = sidebarRef.current;
@@ -58,27 +56,52 @@ export default function Sidebar({ isOpen, toggleSidebar }) {
 
   return (
     <>
-      <div ref={overlayRef} className="fixed inset-0 bg-black/50 z-50 hidden" onClick={toggleSidebar} />
+      <div
+        ref={overlayRef}
+        className="fixed inset-0 bg-black/50 z-50 hidden"
+        onClick={toggleSidebar}
+      />
 
       <div
         ref={sidebarRef}
         className="fixed top-0 right-0 h-full w-[300px] bg-white z-50 shadow-xl flex-col hidden overflow-auto"
       >
         <div className="flex items-center justify-between p-4 border-b">
-        <img className="w-40 h-12" src="https://res.cloudinary.com/dpm3bum4n/image/upload/v1746687518/Logo_eiwqip.png" alt="VIERAFIN insurance & investments  " />
-          <Button  variant="ghost" size="icon" onClick={toggleSidebar}>
+          <div className="flex items-start space-x-4">
+            {/* VIERAFIN + description wrapper */}
+            <div className="relative">
+              <div
+                className="text-3xl source-serif-4 text-[#636363]  leading-tight "
+                style={{}}
+              >
+                <span className="ml-1 tracking-wide">VIERAFIN</span> <br />{" "}
+                <p className="text-xs dosis flex tracking-wider justify-end leading-0 ml-1">
+                  Financial Advisory Services
+                </p>
+              </div>
+            </div>
+
+            {/* Vertical Logo Element */}
+            <div className="relative w-[20px] h-[40px] bg-[#FF7F26]  mt-1">
+              <div className="absolute bottom-[10px] left-0 w-full h-[1px] bg-white" />
+            </div>
+          </div>
+
+          <Button variant="ghost" size="icon" onClick={toggleSidebar}>
             <X className="h-5 w-5" />
           </Button>
         </div>
 
         <div className="p-4 border-b">
           <div className="flex items-center gap-2 mb-3 text-sm">
-            <Phone className="h-6 text-green-900 rounded-full bg-gray-200 border-2 p-1 w-6" />
+            <Phone className="h-7 text-gray-600 rounded-full p-1  w-8" />
             <span className="font-medium">1800-313-123123</span>
           </div>
           <div className="flex items-center gap-2 text-sm">
-            <MapPin className="h-6 text-red-900 rounded-full bg-gray-200 border-2 p-1 w-6" />
-            <span>TIRUPUR BRANCH</span>
+            <MapPin className="h-7 text-gray-600 rounded-full   w-8" />
+            <span className="font-medium text-orange-600 border-b-1 tracking-wider">
+              Tirupur Branch
+            </span>
           </div>
         </div>
 
@@ -93,6 +116,9 @@ export default function Sidebar({ isOpen, toggleSidebar }) {
             <SidebarLink to="#">Contact Us</SidebarLink>
           </ul>
         </nav>
+          <p className="text-xs text-center py-4 opacity-90">
+            © {year} VIERAFIN. All rights reserved.
+          </p>
       </div>
     </>
   );
@@ -111,4 +137,3 @@ function SidebarLink({ to, children }) {
     </li>
   );
 }
-

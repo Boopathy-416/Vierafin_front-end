@@ -1,5 +1,3 @@
-// src/Home/components/ui/Input.jsx
-
 import React from "react";
 
 const Input = React.forwardRef(({ className = "", ...props }, ref) => {
@@ -14,4 +12,4 @@ const Input = React.forwardRef(({ className = "", ...props }, ref) => {
 
 Input.displayName = "Input";
 
-export default Input; // Default export
+export default Input; 

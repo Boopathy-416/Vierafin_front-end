@@ -2,15 +2,14 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import PhoneInput from "./PhoneInput";
 import Button from "./ui/Button";
-import React,{useState} from "react";
+import React, { useState } from "react";
 import Input from "./ui/Input";
 import Select from "./ui/Select";
 import { registerUser } from "../api/register";
 import { useNavigate } from "react-router-dom";
 
-
 export default function RegisterForm() {
-  const [loading, setLoading] = useState(false); // 👈 loading state
+  const [loading, setLoading] = useState(false); 
   const {
     register,
     handleSubmit,
@@ -22,7 +21,7 @@ export default function RegisterForm() {
 
   const onSubmit = async (data) => {
     try {
-      setLoading(true); // 👈 Start loading
+      setLoading(true); 
       await registerUser(data);
 
       toast.success(
@@ -36,10 +35,9 @@ export default function RegisterForm() {
     } catch (err) {
       toast.error(err.message);
     } finally {
-      setLoading(false); // 👈 End loading
+      setLoading(false);
     }
   };
-
 
   const products = [
     "Mutual Fund Investment",
@@ -49,13 +47,17 @@ export default function RegisterForm() {
   ];
 
   return (
-    <div>
-      <h2 className="text-2xl font-bold text-gray-800 mb-6">
-        Start your Wealth Creation Journey with Vierafin
+    <div className=" " style={{
+        fontFamily:"Roboto Flex"
+      }}>
+      <h2 className="text-2xl font-medium tracking-wide text-center text-gray-800 mb-6">
+        <b className=" text-3xl font-light">B</b>egin Your Financial Growth with         <b className=" text-4xl font-black source-serif-4 bg-gray-50 text-gray-500">V</b> <b className=" text-gray-500 font-semibold uppercase source-serif-4 -ml-1">ierafin</b>   
+           <span className="relative ml-2  inline-block w-[20px] h-[40px] bg-[#FF7F26]  mt-1">
+                <div className="absolute bottom-[10px] left-0 w-full h-[1px] bg-white" />
+              </span>
       </h2>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-
         <div>
           <label className="block mb-1">Select a Product</label>
           <Select options={products} {...register("product")} />
@@ -81,7 +83,7 @@ export default function RegisterForm() {
         </div>
 
         <div>
-          <label className="block mb-1">Email</label>
+          <label className="block mb-1 ">Email</label>
           <Input
             placeholder="Your email address"
             type="email"
@@ -99,7 +101,7 @@ export default function RegisterForm() {
         </div>
 
         <div>
-          <label className="block mb-1">Mobile Number</label>
+          <label className="block mb-1 ">Mobile Number</label>
           <PhoneInput
             value={watch("phone")}
             onChange={(val) => setValue("phone", val)}
@@ -110,12 +112,12 @@ export default function RegisterForm() {
         </div>
 
         <Button
-        type="submit"
-        className="w-full bg-red-500 text-white font-medium tracking-wide shadow-red-700 shadow-sm hover:bg-red-700 cursor-pointer"
-        disabled={loading} // 👈 disable button while loading
-      >
-        {loading ? "Submitting..." : "Submit"} {/* 👈 Loading indicator */}
-      </Button>
+          type="submit"
+          className="w-full bg-[#0a1a3a] text-white font-medium tracking-wide shadow-[#0a1a3a91] shadow-sm hover:bg-[#202335] cursor-pointer"
+          disabled={loading}
+        >
+          {loading ? "Submitting..." : "Submit"} 
+        </Button>
 
         <p className="text-xs text-center text-gray-600">
           By continuing, you agree to our Vierafin Company policy.
